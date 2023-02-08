@@ -2,23 +2,33 @@
 
 
 $green: #2D8957;
+$gradient: linear-gradient(0deg, rgba(197, 235, 157, 1) 0%, rgba(247, 250, 186, 1) 100%);
+
+body {
+    background: url('../img/bgFull.png');
+    background-size: cover;
+}
 
 .main-wrapper {
     background: url('../img/bg.png');
-    background-repeat: no-repeat;
-
+    background-size: cover;
     font-family: 'Roboto', sans-serif;
     width: 300px;
     height: 600px;
     color: $green;
     margin: 0 auto;
     padding-top: 40px;
+    position: relative;
 
     .content {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         &-title {
             margin: 0;
             text-transform: uppercase;
-            font-size: 32px;
+            font-size: 35px;
             font-stretch: 100%;
             line-height: 37px;
             letter-spacing: -1.5px;
@@ -27,30 +37,76 @@ $green: #2D8957;
                 0 -2px #fff, -1.41px -1.41px #fff, -2px 0 #fff,
                 -1.41px 1.41px #fff, 0 2px #fff;
         }
-        &-description{
+
+        .buy-title {
+            margin-top: 35px;
+        }
+
+        .buy-link {
+            text-decoration: none;
+            color: $green;
+            align-items: center;
+            padding: 5px 31px;
+            background: $gradient;
+            display: flex;
+            justify-content: center;
+            width: 70px;
+            font-size:  26px;
+            font-weight: 700;
+            border-radius: 32px;
+            border: 1px solid #FFFFFF;
+            margin-top: 20px;
+            transition: 1s;
+            &:hover {
+                transform: scale(1.1);
+            }
+
+        }
+
+        &-description {
             display: block;
             text-align: center;
             margin-top: 10px;
         }
+
+        .tea-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
     }
-    .products{
+
+    .products {
         display: grid;
         grid-template-columns: repeat(2, 112px);
         justify-content: center;
         gap: 14px 15px;
-        &-item{ 
+        margin-top: 30px;
+
+        &-item {
             width: 112px;
             height: 115px;
-            background: rgb(197,235,157);
-            background: linear-gradient(0deg, rgba(197,235,157,1) 0%, rgba(247,250,186,1) 100%);
+            background: rgb(197, 235, 157);
+            background: linear-gradient(0deg, rgba(197, 235, 157, 1) 0%, rgba(247, 250, 186, 1) 100%);
             border-radius: 28px;
             display: flex;
             justify-content: center;
             align-items: center;
             transition: 1s;
-            &:hover{
+            border: 1px solid #FFFFFF;
+
+            &:hover {
                 transform: scale(1.1);
             }
         }
     }
 }
+
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 0;
+  }
