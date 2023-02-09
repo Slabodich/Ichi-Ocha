@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="4; URL=./buy.html">
+    <!-- <meta http-equiv="refresh" content="4; URL=./buy.html"> -->
     <title>Ichi-ocha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <main id="swup" class="transition-fade main-wrapper">
         <div class="content">
@@ -16,7 +18,7 @@
             <p class="content-description">you have <span style="font-weight: 700;">3 attempts</span></p>
             <div class="products">
                 <div class="products-item">
-                    <img class="products-item__img" src="./img/productHoney.svg" alt="image flavour">
+                    <img class=" products-item__img" src="./img/productHoney.svg" alt="image flavour">
                 </div>
                 <div class="products-item">
                     <img class="products-item__img" src="./img/productMint.svg" alt="image flavour">
@@ -24,15 +26,16 @@
                 <div class="products-item">
                     <img class="products-item__img" src="./img/productOrange.svg" alt="image flavour">
                 </div>
-                <div class="products-item">  
+                <div class="products-item">
                     <img class="products-item__img" src="./img/productHoney.svg" alt="image flavour">
                 </div>
                 <div class="products-item">
-                    <img class="products-item__img" src="./img/productOrange.svg" alt="image flavour">    
+                    <img class="products-item__img" src="./img/productOrange.svg" alt="image flavour">
                 </div>
                 <div class="products-item">
                     <img class="products-item__img" src="./img/productMint.svg" alt="image flavour">
                 </div>
+                <a class="refresh" href="/buy.html" style="display: none;"></a>
             </div>
         </div>
     </main>
@@ -40,8 +43,25 @@
     <script src="https://unpkg.com/swup@3"></script>
 
     <script>
+
         const swup = new Swup();
+
+        const element = document.querySelector(".refresh")
+
+        var clickEvent = new MouseEvent("click", {
+            "view": window,
+            "bubbles": true,
+            "cancelable": false
+        });
+
+        setTimeout(function () {
+            element.dispatchEvent(clickEvent);
+        }, 4000);
+
+
+
     </script>
 
 </body>
+
 </html>
